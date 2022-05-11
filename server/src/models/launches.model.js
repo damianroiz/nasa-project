@@ -11,14 +11,10 @@ const launch = {
     target: 'Kepler-442 b',
     customers: ['ZTM', 'NASA'],
     upcoming: true, 
-    succes: true,
+    success: true,
 };
 
 launches.set(launch.flightNumber, launch);
-
-
-
-
 
 function getAllLaunches() {
     return Array.from(launches.values());
