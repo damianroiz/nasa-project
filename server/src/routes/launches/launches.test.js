@@ -18,8 +18,6 @@ describe('Launches API', () =>
         await mongoDisconnect();
     });
 
-
-
 describe('Test GET /launches', () => {
     test('It should respond with 200 sucsess', async ()=> {
         const response = await request(app)
@@ -27,7 +25,7 @@ describe('Test GET /launches', () => {
         .expect('Content-Type', /json/)
         expect(200);
     });
-})
+});
 
 
 describe('Launches API', () => {
@@ -81,11 +79,11 @@ describe('Launches API', () => {
         test('It should catch invalid dates', async () => {        
             const response = await request(app)
             .post('/v1/launches')
-            .send(launch)
+            .send(launchDataWithInvalidDate)
             .expect('Content-Type', /json/)
             expect(400);
     
-            expect(response.body).toStrictlyEqual({
+            expect(response.body).toStrictEqual({
                 error: 'Invalid launch date',
             });
     });
